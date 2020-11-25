@@ -11,6 +11,9 @@ import com.hariselfian.harisrental.fragment.AkunFragment
 import com.hariselfian.harisrental.fragment.HomeFragment
 import com.hariselfian.harisrental.fragment.KeranjangFragment
 
+/**
+ * Kode dibuat dengan cinta oleh Haris Elfian.
+ */
 class MainActivity : AppCompatActivity() {
 
     private val fragmentHome: Fragment = HomeFragment()

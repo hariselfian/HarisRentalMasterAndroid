@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.hariselfian.harisrental.R
 
 /**
- * A simple [Fragment] subclass.
+ * Kode dibuat dengan cinta oleh Haris Elfian.
  */
 class KeranjangFragment : Fragment() {
 
