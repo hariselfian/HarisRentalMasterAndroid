@@ -29,7 +29,7 @@
             android:text="Nama Produk"/>
 
         <TextView
-            android:textColor="@color/Orange"
+            android:textColor="@color/orange"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="10dp"
             android:textSize="16dp"
