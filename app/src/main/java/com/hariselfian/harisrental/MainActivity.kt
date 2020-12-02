@@ -8,7 +8,7 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.hariselfian.harisrental.activity.LoginActivity
+import com.hariselfian.harisrental.activity.MasukActivity
 import com.hariselfian.harisrental.fragment.AkunFragment
 import com.hariselfian.harisrental.fragment.HomeFragment
 import com.hariselfian.harisrental.fragment.KeranjangFragment
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                     if(s.getStatusLogin()){
                         callFragment(2, fragmentAkun)
                     } else {
-                        startActivity(Intent(this, LoginActivity::class.java))
+                        startActivity(Intent(this, MasukActivity::class.java))
                     }
 
                 }
