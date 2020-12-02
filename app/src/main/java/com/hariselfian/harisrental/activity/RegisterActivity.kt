@@ -3,7 +3,12 @@ package com.hariselfian.harisrental.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.hariselfian.harisrental.R
+import com.hariselfian.harisrental.app.ApiConfig
 import kotlinx.android.synthetic.main.activity_register.*
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +39,16 @@ class RegisterActivity : AppCompatActivity() {
             return
         }
 
+        ApiConfig.instanceRetrofit.register(edt_nama.text.toString(), edt_email.text.toString(), edt_password.text.toString()).enqueue(object :Callback<ResponseBody>{
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // handle ketika gagal
+            }
+
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                // handle ketika sukses
+            }
+
+        })
 
     }
 }
