@@ -1,5 +1,6 @@
 package com.hariselfian.harisrental.app
 
+import com.hariselfian.harisrental.model.ResponModel
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.Field
@@ -13,7 +14,7 @@ interface ApiService {
         @Field("name") name :String,
         @Field("email") email :String,
         @Field("password") password :String
-    ):Call<ResponseBody>
+    ):Call<ResponModel>
 
     @POST("login")
     fun login(
