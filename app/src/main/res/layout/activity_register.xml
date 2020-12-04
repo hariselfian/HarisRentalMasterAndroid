@@ -8,31 +8,31 @@
     tools:context=".activity.BaruActivity">
 
     <LinearLayout
-        android:layout_marginHorizontal="15dp"
-        android:paddingHorizontal="15dp"
-        android:layout_centerInParent="true"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="15dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="15dp">
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:gravity="center"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_height="wrap_content">
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_baseline_account_circle_24"/>
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/ic_baseline_account_circle_24" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -45,8 +45,8 @@
                         android:background="@null"
                         android:hint="Nama Lengkap"
                         android:inputType="text"
-                        android:singleLine="true"
-                        android:maxLines="1" />
+                        android:maxLines="1"
+                        android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -55,28 +55,28 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#CACACA"/>
+                android:background="#CACACA" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:gravity="center"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_height="wrap_content">
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_baseline_email_24"/>
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/ic_baseline_email_24" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -89,8 +89,8 @@
                         android:background="@null"
                         android:hint="Email"
                         android:inputType="text"
-                        android:singleLine="true"
-                        android:maxLines="1" />
+                        android:maxLines="1"
+                        android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,28 +99,28 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#CACACA"/>
+                android:background="#CACACA" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:gravity="center"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_height="wrap_content">
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_baseline_phone_iphone_24"/>
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/ic_baseline_phone_iphone_24" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -133,8 +133,8 @@
                         android:background="@null"
                         android:hint="Nomor Telepon"
                         android:inputType="phone"
-                        android:singleLine="true"
-                        android:maxLines="1" />
+                        android:maxLines="1"
+                        android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -143,33 +143,33 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#CACACA"/>
+                android:background="#CACACA" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:gravity="center"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_height="wrap_content">
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_baseline_lock_24"/>
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/ic_baseline_lock_24" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    app:passwordToggleEnabled="true"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    app:passwordToggleEnabled="true">
 
                     <EditText
                         android:id="@+id/edt_password"
@@ -178,8 +178,8 @@
                         android:background="@null"
                         android:hint="Password"
                         android:inputType="textPassword"
-                        android:singleLine="true"
-                        android:maxLines="1" />
+                        android:maxLines="1"
+                        android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -188,7 +188,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#CACACA"/>
+                android:background="#CACACA" />
 
         </LinearLayout>
 
@@ -199,63 +199,63 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/bg_btn_login1"
             android:text="Register"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
         <LinearLayout
-            android:layout_marginTop="25dp"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal">
 
             <View
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="1dp"
-                android:background="#CACACA"/>
+                android:layout_weight="1"
+                android:background="#CACACA" />
 
             <TextView
-                android:layout_marginHorizontal="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="atau masuk dengan"/>
+                android:layout_marginHorizontal="10dp"
+                android:text="atau masuk dengan" />
 
             <View
                 android:layout_width="1dp"
-                android:layout_weight="1"
                 android:layout_height="1dp"
-                android:background="#CACACA"/>
+                android:layout_weight="1"
+                android:background="#CACACA" />
 
         </LinearLayout>
 
         <RelativeLayout
             android:id="@+id/btn_google"
-            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:background="@drawable/bg_btn_google"
-            android:padding="13dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="13dp">
 
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                app:srcCompat="@drawable/ic_google"/>
-            
+                app:srcCompat="@drawable/ic_google" />
+
             <TextView
-                android:layout_centerInParent="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:text="Google"
-                android:textColor="@color/dark"/>
+                android:textColor="@color/dark" />
 
         </RelativeLayout>
     </LinearLayout>
 
     <ProgressBar
-        android:visibility="gone"
-        android:layout_centerInParent="true"
         android:id="@+id/pb"
         android:layout_width="40dp"
-        android:layout_height="40dp"/>
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 </RelativeLayout>

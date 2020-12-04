@@ -15,8 +15,8 @@ import com.hariselfian.harisrental.helper.SharedPref
  */
 class AkunFragment : Fragment() {
 
-    lateinit var s:SharedPref
-    lateinit var btnLogout:Button
+    lateinit var s: SharedPref
+    lateinit var btnLogout: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

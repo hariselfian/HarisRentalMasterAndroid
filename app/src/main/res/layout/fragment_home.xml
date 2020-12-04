@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <RelativeLayout
-        android:background="@color/colorPrimary"
-        android:padding="10dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
             android:layout_marginRight="8dp"
             android:layout_toLeftOf="@id/icn_chat"
-            app:cardCornerRadius="17dp"
-            android:layout_width="match_parent"
-            android:layout_height="35dp">
+            app:cardCornerRadius="17dp">
 
             <LinearLayout
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_marginLeft="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic__search_orange_24"/>
+                    android:layout_marginLeft="8dp"
+                    app:srcCompat="@drawable/ic__search_orange_24" />
 
                 <TextView
-                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:hint="Apa yang ingin Anda sewa di Haris Rental?" />
 
             </LinearLayout>
@@ -43,12 +43,12 @@
 
         <ImageView
             android:id="@+id/icn_chat"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="10dp"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            app:srcCompat="@drawable/ic_chat_putih_24"/>
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/ic_chat_putih_24" />
 
     </RelativeLayout>
 
@@ -57,81 +57,81 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_marginBottom="15dp"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical">
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/vp_slider"
                 android:layout_width="match_parent"
-                android:layout_height="190dp"/>
+                android:layout_height="190dp" />
 
             <LinearLayout
-                android:background="@color/white"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
 
                 <TextView
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/orange"
-                    android:layout_margin= "10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sewaan Terbaru"/>
+                    android:layout_margin="10dp"
+                    android:text="Sewaan Terbaru"
+                    android:textColor="@color/orange"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_produk"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:background="@color/white"
-                android:orientation="vertical"
-                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:orientation="vertical">
 
                 <TextView
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/orange"
-                    android:layout_margin= "10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sewaan Jasa"/>
+                    android:layout_margin="10dp"
+                    android:text="Sewaan Jasa"
+                    android:textColor="@color/orange"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_jasa"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:background="@color/white"
-                android:orientation="vertical"
-                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:orientation="vertical">
 
                 <TextView
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/orange"
-                    android:layout_margin= "10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sewaan Elektronik"/>
+                    android:layout_margin="10dp"
+                    android:text="Sewaan Elektronik"
+                    android:textColor="@color/orange"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_elektronik"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
