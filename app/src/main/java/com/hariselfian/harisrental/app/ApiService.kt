@@ -13,6 +13,7 @@ interface ApiService {
     fun register(
         @Field("name") name :String,
         @Field("email") email :String,
+        @Field("phone") nomortlp :String,
         @Field("password") password :String
     ):Call<ResponModel>
 

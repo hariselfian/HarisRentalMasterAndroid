@@ -51,7 +51,7 @@
                 android:src="@drawable/ic_profile" />
 
             <TextView
-                android:id="@+id/txt_nama"
+                android:id="@+id/tv_nama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -395,7 +395,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                app:srcCompat="@drawable/ic_baseline_edit_24" />
+                                app:srcCompat="@drawable/ic_baseline_business_24" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -446,7 +446,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
-                            app:srcCompat="@drawable/ic_baseline_business_24" />
+                            app:srcCompat="@drawable/ic_baseline_chevron_right_24" />
 
                     </RelativeLayout>
 
