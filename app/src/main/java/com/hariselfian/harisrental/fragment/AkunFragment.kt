@@ -1,13 +1,19 @@
 package com.hariselfian.harisrental.fragment
 
+
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import com.hariselfian.harisrental.MainActivity
 
 import com.hariselfian.harisrental.R
+import com.hariselfian.harisrental.activity.LoginActivity
 import com.hariselfian.harisrental.helper.SharedPref
 
 /**
@@ -34,14 +40,25 @@ class AkunFragment : Fragment() {
         btnLogout.setOnClickListener {
             s.setStatusLogin(false)
         }
+
         setData()
         return view
     }
 
     fun setData(){
-        tvNama.text = s.getString(s.nama)
-        tvEmail.text = s.getString(s.email)
-        tvPhone.text = s.getString(s.phone)
+
+        if (s.getUser() == null){
+            val intent = Intent(activity, LoginActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            return
+        }
+
+        val user = s.getUser()!!
+
+        tvNama.text = user.name
+        tvEmail.text = user.email
+        tvPhone.text = user.phone
     }
 
     private fun init(view: View) {
