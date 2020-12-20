@@ -8,6 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.hariselfian.harisrental.R
 import com.hariselfian.harisrental.model.Produk
+import com.squareup.picasso.Picasso
+import java.text.NumberFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class AdapterProduk(var data:ArrayList<Produk>):RecyclerView.Adapter<AdapterProduk.Holder>() {
 
@@ -27,9 +31,15 @@ class AdapterProduk(var data:ArrayList<Produk>):RecyclerView.Adapter<AdapterProd
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.tvNama.text = data[position].nama
-        holder.tvHarga.text = data[position].harga
-        holder.imgProduk.setImageResource(data[position].gambar)
+        holder.tvNama.text = data[position].name
+        holder.tvHarga.text = NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(Integer.valueOf(data[position].harga))
+//      holder.imgProduk.setImageResource(data[position].image)
+        val image = "http://192.168.43.121/haris_rental/public/storage/produk/" + data[position].image
+        Picasso.get()
+            .load(image)
+            .placeholder(R.drawable.product)
+            .error(R.drawable.product)
+            .into(holder.imgProduk)
     }
 
 }
