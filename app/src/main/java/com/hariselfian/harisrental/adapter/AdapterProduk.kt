@@ -47,7 +47,7 @@ class AdapterProduk(var activity: Activity, var data: ArrayList<Produk>) :
             .format(Integer.valueOf(data[position].harga))
 //      holder.imgProduk.setImageResource(data[position].image)
         val image =
-            "http://192.168.43.121/haris_rental/public/storage/produk/" + data[position].image
+            "http://192.168.43.44/haris_rental/public/storage/produk/" + data[position].image
         Picasso.get()
             .load(image)
             .placeholder(R.drawable.product)
