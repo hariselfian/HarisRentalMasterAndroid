@@ -35,7 +35,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:hint="Apa yang ingin Anda sewa di Haris Rental?" />
+                    android:hint="Apa yang ingin Anda sewa di E-Rent Haris?" />
 
             </LinearLayout>
 

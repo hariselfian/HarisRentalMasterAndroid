@@ -1,9 +1,11 @@
 package com.hariselfian.harisrental.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.google.gson.Gson
 import com.hariselfian.harisrental.R
 import com.hariselfian.harisrental.helper.Helper
@@ -36,7 +38,13 @@ class DetailProdukActivity : AppCompatActivity() {
 
     private fun mainButton() {
         btn_keranjang.setOnClickListener {
-            insert()
+            val data = myDb.daoKeranjang().getProduk(produk.id)
+            if (data == null) {
+                insert()
+            } else {
+                data.jumlah = data.jumlah + 1
+                update(data)
+            }
         }
 
         btn_favorit.setOnClickListener {
@@ -47,6 +55,10 @@ class DetailProdukActivity : AppCompatActivity() {
                 println(note.harga)
             }
         }
+
+        btn_tokeranjang.setOnClickListener {
+            //startActivity(Intent(this.))
+        }
     }
 
     private fun insert() {
@@ -56,6 +68,18 @@ class DetailProdukActivity : AppCompatActivity() {
             .subscribe {
                 checkKeranjang()
                 Log.d("respons", "data inserted")
+                Toast.makeText(this, "Berhasil menambah kekeranjang", Toast.LENGTH_SHORT).show()
+            })
+    }
+
+    private fun update(data: Produk) {
+        CompositeDisposable().add(Observable.fromCallable { myDb.daoKeranjang().update(data) }
+            .subscribeOn(Schedulers.computation())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe {
+                checkKeranjang()
+                Log.d("respons", "data inserted")
+                Toast.makeText(this, "Berhasil menambah kekeranjang", Toast.LENGTH_SHORT).show()
             })
     }
 

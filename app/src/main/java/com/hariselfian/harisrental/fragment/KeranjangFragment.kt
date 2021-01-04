@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.hariselfian.harisrental.R
+import com.hariselfian.harisrental.adapter.AdapterKeranjang
 import com.hariselfian.harisrental.adapter.AdapterProduk
 import com.hariselfian.harisrental.room.MyDatabase
 
@@ -37,7 +38,7 @@ class KeranjangFragment : Fragment() {
         val layoutManager = LinearLayoutManager(activity)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
 
-        rvProduk.adapter = AdapterProduk(requireActivity(), listProduk)
+        rvProduk.adapter = AdapterKeranjang(requireActivity(), listProduk)
         rvProduk.layoutManager = layoutManager
     }
 
