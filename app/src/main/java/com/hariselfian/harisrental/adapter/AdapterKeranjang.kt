@@ -2,12 +2,14 @@ package com.hariselfian.harisrental.adapter
 
 import android.app.Activity
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
@@ -17,7 +19,12 @@ import com.hariselfian.harisrental.activity.DetailProdukActivity
 import com.hariselfian.harisrental.activity.LoginActivity
 import com.hariselfian.harisrental.helper.Helper
 import com.hariselfian.harisrental.model.Produk
+import com.hariselfian.harisrental.room.MyDatabase
 import com.squareup.picasso.Picasso
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -50,12 +57,16 @@ class AdapterKeranjang(var activity: Activity, var data: ArrayList<Produk>) :
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.tvNama.text = data[position].name
-        holder.tvHarga.text = Helper().gantiRupiah(data[position].harga)
 
-        val jumlah = data[position].jumlah
+        val produk = data[position]
+
+        holder.tvNama.text = produk.name
+        holder.tvHarga.text = Helper().gantiRupiah(produk.harga)
+
+        var jumlah = data[position].jumlah
+
+
         holder.tvJumlah.text = jumlah.toString()
-//      holder.imgProduk.setImageResource(data[position].image)
         val image =
             "http://192.168.43.44/haris_rental/public/storage/produk/" + data[position].image
         Picasso.get()
@@ -64,12 +75,44 @@ class AdapterKeranjang(var activity: Activity, var data: ArrayList<Produk>) :
             .error(R.drawable.product)
             .into(holder.imgProduk)
 
-        holder.layout.setOnClickListener {
-            val activiti = Intent(activity, DetailProdukActivity::class.java)
-            val str = Gson().toJson(data[position], Produk::class.java)
-            activiti.putExtra("extra", str)
-            activity.startActivity(activiti)
+        holder.btnTambah.setOnClickListener {
+            jumlah++
+            produk.jumlah = jumlah
+            update(produk)
+            holder.tvJumlah.text = jumlah.toString()
+        }
+
+        holder.btnKurang.setOnClickListener {
+            if (jumlah <= 1) return@setOnClickListener
+            jumlah--
+
+            produk.jumlah = jumlah
+            update(produk)
+            holder.tvJumlah.text = jumlah.toString()
+        }
+
+        holder.btnDelete.setOnClickListener {
+            notifyItemRemoved(position)
+            delete(produk)
+            notifyDataSetChanged()
         }
     }
 
+    private fun update(data: Produk) {
+        val myDb = MyDatabase.getInstance(activity)
+        CompositeDisposable().add(Observable.fromCallable { myDb!!.daoKeranjang().update(data) }
+            .subscribeOn(Schedulers.computation())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe {
+            })
+    }
+
+    private fun delete(data: Produk) {
+        val myDb = MyDatabase.getInstance(activity)
+        CompositeDisposable().add(Observable.fromCallable { myDb!!.daoKeranjang().delete(data) }
+            .subscribeOn(Schedulers.computation())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe {
+            })
+    }
 }

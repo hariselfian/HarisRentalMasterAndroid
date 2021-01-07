@@ -1,12 +1,16 @@
 package com.hariselfian.harisrental
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.hariselfian.harisrental.activity.MasukActivity
 import com.hariselfian.harisrental.fragment.AkunFragment
@@ -31,7 +35,9 @@ class MainActivity : AppCompatActivity() {
 
     private var statusLogin = false
 
-    private lateinit var s:SharedPref
+    private lateinit var s: SharedPref
+
+    private var dariDetail: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,14 +46,25 @@ class MainActivity : AppCompatActivity() {
         s = SharedPref(this)
 
         setUpBottomNav()
+
+        LocalBroadcastManager.getInstance(this)
+            .registerReceiver(mMessage, IntentFilter("event:keranjang"))
     }
-    fun setUpBottomNav(){
+
+    val mMessage: BroadcastReceiver = object : BroadcastReceiver() {
+        override fun onReceive(p0: Context?, p1: Intent?) {
+            dariDetail = true
+        }
+    }
+
+    fun setUpBottomNav() {
         fm.beginTransaction().add(R.id.container, fragmentHome).show(fragmentHome).commit()
-        fm.beginTransaction().add(R.id.container, fragmentKeranjang).hide(fragmentKeranjang).commit()
+        fm.beginTransaction().add(R.id.container, fragmentKeranjang).hide(fragmentKeranjang)
+            .commit()
         fm.beginTransaction().add(R.id.container, fragmentAkun).hide(fragmentAkun).commit()
 
         bottomNavigationView = findViewById(R.id.nav_view)
-        menu =bottomNavigationView.menu
+        menu = bottomNavigationView.menu
         menuItem = menu.getItem(0)
         menuItem.isChecked = true
 
@@ -74,10 +91,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun callFragment(int: Int,fragment: Fragment){
+    fun callFragment(int: Int, fragment: Fragment) {
         menuItem = menu.getItem(int)
         menuItem.isChecked = true
         fm.beginTransaction().hide(active).show(fragment).commit()
         active = fragment
+    }
+
+    override fun onResume() {
+        if (dariDetail) {
+            dariDetail = false
+            callFragment(1, fragmentKeranjang)
+        }
+        super.onResume()
     }
 }
